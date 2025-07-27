@@ -1,21 +1,13 @@
 {
   "name": "hurhunter",
   "version": "1.0.0",
-  "description": "reasercher",
-  "main": "index.js",
-  "dependencies": {
-    "boostrap": "^2.0.0",
-    "bootstrap": "^5.3.3",
-    "node.js": "0.0.1-security",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
-  },
-  "devDependencies": {
-    "vite": "^5.3.4"
-  },
+  "description": "Sitio estático con Bootstrap",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "live-server"
   },
   "author": "Deimer Arteta",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
 }
