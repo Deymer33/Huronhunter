@@ -1,46 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Huronhunter/frontend/public/src/styles/styles.css">
-    <title>quienes somos</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="/Huronhunter/frontend/public/src/styles/styles.css" />
+  <title>¿Quiénes somos?</title>
+  <style>
+    @media (max-width: 768px) {
+      .about-image {
+        height: 30vh !important;
+        margin-top: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header class="navbar bd-navbar justify-content-end bg-danger py-6 sticky-top">
-            <ul class="nav nav-pills">
-            <li class="nav-item"><a href="index.html" class="nav-link" aria-current="page">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
-            <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-            <li class="nav-item"><a href="about.html" class="nav-link active">About</a></li>
-            </ul>
-        </div>
-  </header>
 
-<div class="container-fluid">
-    <div class=" row p-4 p-md-5 mb-4 text-black rounded">
-        <div class="col-6 px-0" >
-            <h1 class="display-4 fst-boold">¡Bienvenido a HuroHunter!</h1>
-            <p class="lead my-3">HuroHunter es un buscador de herramientas digitales que te permite encontrar páginas y programas sin la necesidad de registrarte o pagar nada. <br> <br>Mi objetivo es brindarte más tiempo y autonomía en tus búsquedas, facilitando el acceso a recursos gratuitos y accesibles.<br>
-               <br>En HuroHunter, hemos integrado la inteligencia artificial para ayudarte a encontrar exactamente lo que necesitas, de manera rápida y eficiente. Cada búsqueda está diseñada para ofrecerte resultados precisos y relevantes, adaptados a tus necesidades.
-               <br>Soy Deimer Ospino Arteta, el analista y desarrollador de software detrás de este emocionante proyecto.<br> <br>Aunque de momento estoy trabajando solo en este proyecto, mi pasión por la tecnología y mi compromiso con la creación de soluciones útiles y accesibles son el motor que impulsa a HuroHunter. <br> <br>Estoy aquí para ayudarte a explorar el vasto mundo de las herramientas digitales, haciendo que cada búsqueda sea una experiencia sencilla y gratificante.<br>
-                Gracias por ser parte de esta aventura. ¡Disfruta explorando con HuroHunter!</p>
-            </div>
-        <div class="col-5 align-self-center mx-3">
-            <img src="/Huronhunter/frontend/public/src/util/HuroHunterRed.png" class="rounded-circle mx-4 float-end" style="height:40vh;" alt="">
-        </div>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark bg-danger sticky-top px-3">
+    <a class="navbar-brand text-white" href="index.html">HuroHunter</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a href="index.html" class="nav-link text-white">Home</a></li>
+        <li class="nav-item"><a href="blog.html" class="nav-link text-white">Blog</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link active text-white">About</a></li>
+      </ul>
     </div>
-</div>
+  </nav>
 
-<footer class="footer">
-    <div class="container-fluid- bg-primary">
-        "<div class="row text-white">  <div class="col-lg-4">   <small> Enlaces </small>  <ul>    <li><a href="#">Inicio</a></li>  <li><a href="#">Acerca de</a></li> <li><a href="#">Contacto</a></li>   </ul>  </div>  <div class="col-lg-4"> <small>Contacto</small> <small>Correo electrónico: info@example.com</small>      <p>Teléfono: 123-456-7890</p>      </div>      <div class="col-lg-4">        <h3>Derechos de autor</h3>        <p>(c) 2023 Mi Sitio Web. Todos los derechos reservados.</p>      </div>    </div>" https://blog.hubspot.es/website/como-crear-footer-bootstrap
-        
+  <!-- About Section -->
+  <div class="container my-5">
+    <div class="row align-items-center">
+      <div class="col-md-7">
+        <h1 class="display-5 fw-bold">¡Bienvenido a HuroHunter!</h1>
+        <p class="lead mt-4">
+          HuroHunter es un buscador de herramientas digitales que te permite encontrar páginas y programas sin registrarte ni pagar.<br><br>
+          Hemos integrado inteligencia artificial para facilitarte resultados precisos y relevantes.
+          <br><br>
+          Soy <strong>Deimer Ospino Arteta</strong>, el analista y desarrollador de software detrás de este proyecto. Aunque trabajo solo, mi pasión por la tecnología me impulsa a construir soluciones útiles y accesibles.
+          <br><br>
+          Gracias por ser parte de esta aventura. ¡Disfruta explorando con HuroHunter!
+        </p>
+      </div>
+      <div class="col-md-5 text-center">
+        <img src="/Huronhunter/frontend/public/src/util/HuroHunterRed.png" class="rounded-circle about-image" style="height:40vh;" alt="HuroHunter Logo" />
+      </div>
     </div>
-</footer>
+  </div>
 
-<script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    
+  <!-- Footer -->
+  <footer class="footer bg-primary text-white py-4 mt-auto">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-3">
+          <h6>Enlaces</h6>
+          <ul class="list-unstyled">
+            <li><a href="index.html" class="text-white text-decoration-none">Inicio</a></li>
+            <li><a href="about.html" class="text-white text-decoration-none">Acerca de</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 mb-3">
+          <h6>Contacto</h6>
+          <p class="mb-0">Correo electrónico: info@example.com</p>
+          <p>Teléfono: 123-456-7890</p>
+        </div>
+        <div class="col-lg-4 mb-3">
+          <h6>Derechos de autor</h6>
+          <p class="mb-0">© 2023 Mi Sitio Web. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/Huronhunter/frontend/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

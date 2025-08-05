@@ -1,54 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Huronhunter/frontend/public/src/styles/styles.css">
-    <title>resultados</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="/Huronhunter/frontend/public/src/styles/styles.css" />
+  <title>Resultados de búsqueda</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    body {
+      min-height: 100vh;
+      background-color: white;
+      color: black;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    footer {
+      margin-top: auto;
+    }
+
+    .search-bar {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    #resultsContainer {
+      padding: 2rem 1rem;
+    }
+
+    a.text-white:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-    <header class="navbar bd-navbar justify-content-end py-6 bg-white sticky-top">
-        <ul class="nav nav-pills">
-        <li class="nav-item"><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
-        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-        </ul>
-    </header>
+  <!-- 🔺 NAVBAR -->
+  <header class="navbar bd-navbar justify-content-end py-3 bg-white sticky-top border-bottom">
+    <ul class="nav nav-pills mx-auto">
+      <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
+      <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+    </ul>
+  </header>
 
-    <div class="container-fluid sticky-top">
-        <div class="row bg-white my-2">
-          <div class="col-md-2">
-            <img src="/Huronhunter/frontend/public/src/util/HuroHunter-removebg-preview.png" style="height: 15vh;" class="rounded my-2" alt="..." >
-          </div>
-          <div class="col-md-4 align-self-end">
-            <input type="input" class="form-control" placeholder="Search...">
-          </div>
-          <div class="col-md-2 align-self-end">
-            <button id="boton" class="btn btn-primary btn-border-radius-sm position-relative">Buscar</button>
-          </div>
+  <!-- 🔺 CONTENIDO -->
+  <main>
+    <div class="container search-bar bg-white sticky-top">
+      <div class="row align-items-end">
+        <div class="col-md-2">
+          <img src="/Huronhunter/frontend/public/src/util/HuroHunter-removebg-preview.png" style="height: 15vh;" class="rounded my-2" alt="Logo">
+        </div>
+        <div class="col-md-6">
+          <input type="text" class="form-control" id="searchInput" placeholder="Buscar...">
+        </div>
+        <div class="col-md-2">
+          <button id="boton" class="btn btn-primary w-100">Buscar</button>
         </div>
       </div>
-
-
-    <div class="container-fluid">
-        <div class="row my-3">
-            <div class="col-8 bg-danger">
-            </div>
-            <div class="col-4 bg-primary">
-            </div>
-        </div>
     </div>
 
-    <footer class="footer">
-        <div class="container-fluid- bg-primary">
-            "<div class="row text-white">      <div class="col-lg-4">        <small> Enlaces </small>       <ul>          <li><a href="#">Inicio</a></li>          <li><a href="#">Acerca de</a></li> <li><a href="#">Contacto</a></li>   </ul>  </div>  <div class="col-lg-4"> <small>Contacto</small> <small>Correo electrónico: info@example.com</small>      <p>Teléfono: 123-456-7890</p>      </div>      <div class="col-lg-4">        <h3>Derechos de autor</h3>        <p>(c) 2023 Mi Sitio Web. Todos los derechos reservados.</p>      </div>    </div>" https://blog.hubspot.es/website/como-crear-footer-bootstrap
-            
+    <!-- 🔺 RESULTADOS -->
+    <div class="container-fluid">
+    <div class="row">
+      <!-- ASIDE: respuesta generada -->
+      <aside class="col-md-4 bg-light p-3 border-end">
+        <h5>Explicación de la búsqueda</h5>
+        <div id="loadingSpinner" class="text-center my-4">
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Cargando...</span>
+          </div>
         </div>
-    </footer>
+        <div id="responseText" class="fst-italic"></div>
+      </aside>
 
-    <script src="/Huronhunter/frontend/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    
+      <!-- RESULTADOS: herramientas -->
+      <section class="col-md-8 p-3" id="resultsContainer">
+        <!-- Aquí se insertan las herramientas -->
+      </section>
+    </div>
+  </div>
+
+  <!-- 🔺 FOOTER -->
+  <footer class="footer bg-primary text-white py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <small>Enlaces</small>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-white">Inicio</a></li>
+            <li><a href="#" class="text-white">Acerca de</a></li>
+            <li><a href="#" class="text-white">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <small>Contacto</small><br>
+          <small>Correo electrónico: info@example.com</small>
+          <p>Teléfono: 123-456-7890</p>
+        </div>
+        <div class="col-lg-4">
+          <h5>Derechos de autor</h5>
+          <p>(c) 2025 HuronHunter. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 🔺 SCRIPTS -->
+  <script src="/Huronhunter/frontend/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="/Huronhunter/frontend/public/src/js/searchResult.js"></script>
 </body>
 </html>

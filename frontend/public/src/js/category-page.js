@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!response.ok) throw new Error("Error al obtener los productos");
         return response.json();
       })
-      .then(tools => {
+      .then(tools => { 
         if (tools && tools.length > 0) {
           renderTools(tools, productsContainer);
         } else {
@@ -35,27 +35,28 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-function renderTools(tools, container) {
-  container.innerHTML = '';
+function renderTools(tools) {
+  const container = document.getElementById("productsContainer");
+  container.innerHTML = "";
+
   tools.forEach(tool => {
-    const toolCard = document.createElement('div');
-    toolCard.className = 'col';
-    toolCard.innerHTML = `
-      <div class="card h-100">
-          <img src="${tool.image || 'https://via.placeholder.com/400x300?text=Herramienta'}" class="card-img-top" alt="${tool.name}">
-          <div class="card-body d-flex flex-column">
-              <h5 class="card-title">${tool.name}</h5>
-              <p class="card-text">${tool.description || 'Descripción no disponible.'}</p>
-              <div class="mt-auto">
-                  <h4 class="text-primary mb-3">${tool.price || 'Precio no disponible'}</h4>
-                  <a href="#" class="btn btn-primary w-100">Ver detalles</a>
-              </div>
-          </div>
+    const card = document.createElement("div");
+    card.className = "col";
+
+    card.innerHTML = `
+      <div class="card tool-card h-100">
+        <div class="card-body">
+          <h5 class="card-title">${tool.name}</h5>
+          <p class="card-text">${tool.description}</p>
+          <a href="${tool.link}" class="btn btn-outline-primary mt-2">Ver más</a>
+        </div>
       </div>
     `;
-    container.appendChild(toolCard);
+
+    container.appendChild(card);
   });
 }
+
 
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);

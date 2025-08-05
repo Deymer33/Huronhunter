@@ -1,55 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Huronhunter/frontend/public/src/styles/styles.css">
-    <title>Blog</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="/Huronhunter/frontend/public/src/styles/styles.css" />
+  
+  <title>Blog - HuroHunter</title>
 </head>
-<body>
-    
-    <header class="navbar bd-navbar justify-content-end py-6 sticky-top">
-        <ul class="nav nav-pills">
-        <li class="nav-item"><a href="index.html" class="nav-link" aria-current="page">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
-        <li class="nav-item"><a href="#" class="nav-link active">Blog</a></li>
-        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-        </ul>
-    </div>
-    </header>
+<body class="d-flex flex-column min-vh-100">
 
-    <div class="d-flex justify-content-center my-3">
-    <div class="col-lg-6 px-0">
-        <h1 class="display-4 fst-italic">BLog de actualidad</h1>
-        <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
-        <p class="lead mb-0"><a href="#" class="text-body-emphasis fw-bold">Continue reading...</a></p>
-      </div>
-    </div>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark bg-danger sticky-top px-3">
+    <a class="navbar-brand text-white" href="index.html">HuroHunter</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarBlog">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-<div class="container">
-    <div class="row">
-        <div class="col-sm-6 mb-3 mb-sm-0">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarBlog">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a href="index.html" class="nav-link text-white">Home</a></li>
+        <li class="nav-item"><a href="blog.html" class="nav-link active text-white">Blog</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link text-white">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Blog Header -->
+  <header class="bg-light py-5 text-center">
+    <div class="container">
+      <h1 class="display-4 fw-bold">Blog de Actualidad</h1>
+      <p class="lead">Descubre noticias, herramientas digitales, y novedades del mundo tech. Actualizado con contenido relevante para desarrolladores y entusiastas.</p>
+    </div>
+  </header>
+
+  <!-- Blog Posts Grid -->
+  <main class="container my-5" id="blog-posts">
+    <div class="row g-4">
+
+      <!-- Placeholder post 1 -->
+      <div class="col-md-6">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">¿Qué es una API y cómo usarla?</h5>
+            <p class="card-text">Una API permite la comunicación entre sistemas. Aprende cómo integrarlas fácilmente con tus proyectos.</p>
+            <a href="#" class="btn btn-outline-primary btn-sm">Leer más</a>
           </div>
         </div>
       </div>
-</div>
-    
+
+      <!-- Placeholder post 2 -->
+      <div class="col-md-6">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Top 5 herramientas de IA en 2025</h5>
+            <p class="card-text">Te mostramos las mejores herramientas basadas en inteligencia artificial que están revolucionando el desarrollo.</p>
+            <a href="#" class="btn btn-outline-primary btn-sm">Leer más</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Puedes duplicar estos divs o inyectarlos dinámicamente luego con JS -->
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer mt-auto bg-primary text-white py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <h6>Enlaces</h6>
+          <ul class="list-unstyled">
+            <li><a href="index.html" class="text-white text-decoration-none">Inicio</a></li>
+            <li><a href="about.html" class="text-white text-decoration-none">Acerca de</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h6>Contacto</h6>
+          <p>Correo: info@example.com<br>Tel: 123-456-7890</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h6>Derechos</h6>
+          <p>© 2025 HuroHunter. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/Huronhunter/frontend/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- <script src="/Huronhunter/frontend/public/src/js/blog.js"></script> --> <!-- Lo puedes usar luego -->
 
 </body>
 </html>
